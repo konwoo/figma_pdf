@@ -1,0 +1,18 @@
+{
+  "name": "figma-to-pdf",
+  "version": "1.0.0",
+  "description": "Export selected Figma layers to a single multi-page A4 PDF",
+  "scripts": {
+    "build": "esbuild code.ts --bundle --outfile=code.js --target=es2020 && esbuild ui.ts --bundle --outfile=ui.bundle.js --target=es2020",
+    "watch": "concurrently \"esbuild code.ts --bundle --outfile=code.js --target=es2020 --watch\" \"esbuild ui.ts --bundle --outfile=ui.bundle.js --target=es2020 --watch\""
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0",
+    "concurrently": "^8.2.0",
+    "@figma/plugin-typings": "^1.98.0",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "jspdf": "^2.5.1"
+  }
+}
